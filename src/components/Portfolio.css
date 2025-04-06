@@ -1,0 +1,94 @@
+/* src/components/Portfolio.css */
+.portfolio-section {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #f8f9fa; /* Light background for distinction */
+  /* overflow-x: hidden; /* Flickity might handle overflow */
+}
+
+.portfolio-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #333;
+  font-family: 'Avenir', sans-serif; /* Consistent font */
+  font-weight: 500; /* Medium weight */
+}
+
+/* Container for the Flickity carousel */
+/* Flickity adds its own viewport and container structure */
+.main-carousel {
+  max-width: 1000px; /* Max width of the carousel component */
+  margin: 0 auto; /* Center the container on the page */
+  /* Flickity's default prev/next buttons are positioned absolutely */
+  /* We might need to adjust padding/margins if using custom arrows */
+}
+
+/* Styling for individual cells within Flickity */
+.carousel-cell {
+  /* Set width based on 3 items, Flickity handles grouping */
+  width: calc((100% - 40px) / 3); /* Adjust based on desired gap */
+  margin-right: 20px; /* Creates the gap between cells */
+  /* height: 200px; /* Optional: Set a fixed height */
+  /* background: #eee; /* Optional: Background for visibility */
+  box-sizing: border-box;
+}
+
+.carousel-cell img {
+  display: block; /* Remove extra space below image */
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  /* Optional: object-fit: cover; if you set a fixed height */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Keep subtle shadow */
+}
+
+/* --- Flickity Button Overrides (Optional) --- */
+/* Example: Styling Flickity's default buttons */
+.flickity-prev-next-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.flickity-prev-next-button:hover {
+  background: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.flickity-prev-next-button .flickity-button-icon {
+  fill: #333; /* Arrow color */
+}
+
+/* --- Responsive Adjustments --- */
+
+@media (max-width: 768px) {
+  .portfolio-section h2 {
+    font-size: 2rem;
+  }
+  .carousel-cell {
+    /* Adjust width for 3 cells, considering smaller screen */
+    width: calc((100% - 30px) / 3);
+    margin-right: 15px;
+  }
+  .flickity-prev-next-button {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 576px) {
+  .portfolio-section {
+     padding: 40px 10px; /* Less padding on mobile */
+  }
+  .carousel-cell {
+    /* Show 2 cells on small screens */
+    width: calc((100% - 10px) / 2);
+    margin-right: 10px;
+  }
+   .flickity-prev-next-button {
+     width: 30px;
+     height: 30px;
+  }
+} 
