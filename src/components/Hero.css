@@ -15,7 +15,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Maintain aspect ratio, similar to object-contain */
+  object-fit: cover; /* Changed from contain to cover */
   z-index: 0;
 }
 
@@ -39,7 +39,7 @@
 }
 
 .hero-name {
-  font-size: 8rem; /* Base size */
+  font-size: 2rem; /* Base size */
   font-weight: 300; /* Set base weight for the whole name */
   font-family: 'Avenir', sans-serif; /* Changed font to simple Avenir */
   margin-bottom: 0.5rem; /* mb-2 */
@@ -65,7 +65,7 @@
 /* Medium screens (md: breakpoint, typically 768px) */
 @media (min-width: 768px) {
   .hero-name {
-    font-size: 2.75rem; /* text-[220px] */
+    font-size: 3rem; /* text-[220px] */
     margin-bottom: 1rem; /* md:mb-4 */
   }
   .hero-title {
