@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import Flickity from 'flickity';
+// Flickity lazyload module (if installed separately, often included in pkgd)
+// import 'flickity-imagesloaded/flickity-imagesloaded.js';
 import 'flickity/css/flickity.css'; // Import Flickity CSS
 import './Portfolio.css'; // Your custom styles (we'll adjust this)
 
@@ -32,7 +34,7 @@ const Portfolio = () => {
         wrapAround: true, // Loop back to the beginning
         pageDots: false, // Hide default dots if using custom arrows
         prevNextButtons: true, // Use Flickity's default buttons initially
-        // Consider adding responsive settings if needed:
+        lazyLoad: 5, // Enable lazy loading, load 1 adjacent image
         // adaptiveHeight: true, // Adjust height based on content
       });
 
@@ -61,7 +63,7 @@ const Portfolio = () => {
         {images.map((imageSrc, index) => (
           /* Each image is a carousel cell */
           <div className="carousel-cell" key={index}>
-            {imageSrc && <img src={imageSrc} alt={`Portfolio item ${index + 1}`} />}
+            {imageSrc && <img data-flickity-lazyload={imageSrc} alt={`Portfolio item ${index + 1}`} />}
           </div>
         ))}
       </div>

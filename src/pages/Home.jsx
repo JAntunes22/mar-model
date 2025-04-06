@@ -1,15 +1,16 @@
 import React from 'react';
 import Hero from '../components/Hero';
 import Portfolio from '../components/Portfolio';
-// Import other sections later: About, Gallery, Contact, Footer
+import About from '../components/About';
+// Import other sections later: Gallery, Contact, Footer
 
 const Home = () => {
   return (
     <div>
       <Hero />
       <Portfolio />
+      <About />
       {/* Render other sections here */}
-      {/* <About /> */}
       {/* <Gallery /> */}
       {/* <ContactForm /> */}
       {/* <Footer /> */}

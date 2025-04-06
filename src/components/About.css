@@ -1,0 +1,73 @@
+/* src/components/About.css */
+.about-section {
+  display: flex;
+  align-items: center; /* Vertically center content */
+  padding: 80px 40px; /* Internal padding */
+  background-color: #ffffff; /* White background */
+  gap: 40px; /* Space between text and image */
+  /* Add vertical margin based on viewport height */
+  margin: 10vh 10%;
+}
+
+.about-content {
+  flex: 1; /* Take up remaining space */
+  max-width: 50%; /* Limit text width */
+}
+
+.about-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+  font-family: 'Avenir', sans-serif;
+  font-weight: 500; /* Medium weight */
+}
+
+.about-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  font-family: 'Avenir', sans-serif;
+  font-weight: 300; /* Light weight */
+  margin-bottom: 15px; /* Space between paragraphs */
+}
+
+.about-image {
+  flex: 1; /* Take up remaining space */
+  max-width: 50%; /* Limit image width */
+  text-align: center; /* Center image if container is wider */
+}
+
+.about-image img {
+  max-width: 100%; /* Ensure image is responsive */
+  height: auto;
+  /* Optional: Add styling like border-radius or shadow */
+  /* border-radius: 8px; */
+  /* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); */
+}
+
+/* --- Responsive Adjustments --- */
+
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column; /* Stack items vertically */
+    padding: 60px 20px;
+    text-align: center; /* Center text when stacked */
+  }
+
+  .about-content,
+  .about-image {
+    max-width: 100%; /* Allow full width when stacked */
+  }
+
+  .about-content h2 {
+    font-size: 2rem;
+  }
+
+  .about-content p {
+    font-size: 1rem;
+  }
+
+  .about-image {
+    margin-top: 30px; /* Add space above image when stacked */
+  }
+} 

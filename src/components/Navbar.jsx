@@ -3,26 +3,49 @@ import React from 'react';
 import './Navbar.css';
 
 const Navbar = () => {
+
+  // Function to handle smooth scroll to top
+  const scrollToTop = (event) => {
+    event.preventDefault(); // Prevent default anchor jump
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // Enable smooth scrolling
+    });
+  };
+
+  // Function to handle smooth scroll to a specific section
+  const scrollToSection = (event, sectionId) => {
+    event.preventDefault(); // Prevent default anchor jump
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
         {/* Remove the logo Link */}
         <ul className="nav-menu">
           <li className="nav-item">
-            <a href="#home" className="nav-link">Home</a> {/* Placeholder href */}
+            {/* Scroll to top */}
+            <a href="#" className="nav-link" onClick={scrollToTop}>Home</a>
           </li>
           <li className="nav-item">
-            <a href="#portfolio" className="nav-link">Portfolio</a>
+            {/* Scroll to Portfolio section */}
+            <a href="#portfolio" className="nav-link" onClick={(e) => scrollToSection(e, 'portfolio')}>Portfolio</a>
           </li>
           <li className="nav-item">
-            <a href="#about" className="nav-link">About</a>
+            {/* Scroll to About section */}
+            <a href="#about" className="nav-link" onClick={(e) => scrollToSection(e, 'about')}>About</a>
           </li>
           <li className="nav-item">
             {/* Assuming Insta links externally */}
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="nav-link">Insta</a> 
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="nav-link">Insta</a>
           </li>
           <li className="nav-item">
-            <a href="#contact" className="nav-link">Contact</a>
+            {/* Scroll to Contact section */}
+            <a href="#contact" className="nav-link" onClick={(e) => scrollToSection(e, 'contact')}>Contact</a>
           </li>
         </ul>
       </div>
