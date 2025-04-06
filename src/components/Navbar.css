@@ -1,0 +1,85 @@
+/* src/components/Navbar.css */
+
+.navbar {
+  background-color: white; /* Match body background */
+  height: 80px; /* Adjust height as needed */
+  display: flex;
+  justify-content: center; /* Center the container */
+  align-items: center;
+  font-size: 1.2rem;
+  position: fixed; /* Keep it fixed at the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999; /* Ensure it stays on top */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow like the example */
+  padding: 0 20px; /* Add some horizontal padding */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: center; /* Center the menu */
+  align-items: center;
+  width: 100%;
+  max-width: 1300px; /* Optional: constrain width */
+}
+
+/* Styling for the navigation menu */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  text-align: center;
+  padding: 0; /* Remove default ul padding */
+  margin: 0; /* Remove default ul margin */
+}
+
+.nav-item {
+  height: 80px; /* Match navbar height for alignment */
+}
+
+.nav-link {
+  color: #212529; /* Default text color */
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 2rem; /* Spacing between links */
+  height: 100%;
+  cursor: pointer;
+  font-family: 'Avenir', sans-serif; /* Use Avenir */
+  font-size: 1.3rem; /* Adjust as needed */
+  font-weight: 300; /* Light weight */
+  transition: color 0.2s ease-in-out;
+}
+
+.nav-link:hover {
+  color: #888; /* Example hover color */
+  /* Add other hover effects if desired */
+}
+
+/* --- Media Queries for Responsive Nav Link Size --- */
+
+/* Medium screens (e.g., tablets, <= 768px) */
+@media (max-width: 768px) {
+  .nav-link {
+    font-size: 0.9rem; /* Slightly smaller font */
+    padding: 0 1rem; /* Slightly reduce spacing */
+  }
+}
+
+/* Small screens (e.g., mobile phones, <= 640px) */
+@media (max-width: 640px) {
+  .nav-link {
+    font-size: 0.8rem; /* Even smaller font */
+    padding: 0 0.6rem; /* Further reduce spacing */
+  }
+  
+  /* Optional: adjust navbar height on small screens */
+  /* .navbar {
+    height: 60px; 
+  }
+  .nav-item {
+    height: 60px;
+  } */
+} 
