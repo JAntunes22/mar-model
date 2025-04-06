@@ -1,8 +1,12 @@
 import React from 'react';
+import { useParallax } from 'react-scroll-parallax'; // Import useParallax
 import './About.css';
 import aboutImage from '../assets/about/IMG_5810.JPG'; // Import the image
 
 const About = () => {
+  // Apply parallax hook to the image container
+  const { ref: imageRef } = useParallax({ speed: -20 });
+
   return (
     <section id="about" className="about-section">
       <div className="about-content">
@@ -20,7 +24,8 @@ const About = () => {
         </p>
         {/* Add more paragraphs as needed */}
       </div>
-      <div className="about-image">
+      {/* Apply the ref from the hook to the div containing the image */}
+      <div className="about-image" ref={imageRef}>
         <img src={aboutImage} alt="Mar Coutinho" />
       </div>
     </section>
