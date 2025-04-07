@@ -1,0 +1,183 @@
+/* src/components/InstaSection/InstaSection.css */
+.insta-section {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #fff; /* Or a subtle off-white */
+  overflow: hidden; /* Prevent horizontal scrollbars if swiper overflows slightly */
+}
+
+.insta-section h2 {
+  margin-bottom: 2.5rem;
+  font-size: clamp(1.8rem, 5vw, 2.5rem); /* Responsive font size */
+  color: #333;
+  font-weight: 500;
+  text-transform: uppercase; /* Added */
+  font-family: 'Avenir', sans-serif; /* Added font family for consistency */
+}
+
+/* Add some constraints to the swiper container */
+.insta-swiper {
+  width: 100%;
+  max-width: 1400px; /* Adjust max-width as needed */
+  margin: 0 auto;
+  padding: 10px 0 50px 0; /* Top padding for potential shadow, Bottom padding for pagination */
+  /* Optional: Add left/right padding if navigation buttons are outside */
+  /* padding-left: 50px; */
+  /* padding-right: 50px; */
+}
+
+.insta-slide {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  height: auto;
+  aspect-ratio: 1 / 1; /* Maintain square aspect ratio */
+  background-color: #eee; /* Background color while image loads */
+  transition: transform 0.3s ease-out; /* Add smooth transition for hover */
+}
+
+/* Add a subtle lift effect on hover */
+.insta-slide:hover {
+    transform: translateY(-5px);
+}
+
+
+.insta-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative; /* Context for the overlay */
+  text-decoration: none; /* Remove underline from link */
+  color: inherit; /* Inherit text color */
+}
+
+.insta-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure image covers the slide area */
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth zoom effect */
+}
+
+.insta-description-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)); /* Gradient background */
+  color: white;
+  padding: 20px 15px 15px 15px; /* More padding at the top */
+  opacity: 0;
+  transform: translateY(20px); /* Start slightly lower */
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  text-align: left;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  max-height: 50%; /* Limit height */
+  overflow: hidden;
+  pointer-events: none; /* Allow clicks to go through to the link */
+}
+
+.insta-link:hover .insta-description-overlay,
+.insta-link:focus .insta-description-overlay { /* Show on focus too for accessibility */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.insta-link:hover img,
+.insta-link:focus img {
+    transform: scale(1.08); /* Slightly zoom image on hover/focus */
+}
+
+/* --- Swiper UI Customization --- */
+
+/* Make navigation buttons more visible */
+.insta-swiper .swiper-button-next,
+.insta-swiper .swiper-button-prev {
+  color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+  border-radius: 50%;
+  width: 40px; /* Explicit width */
+  height: 40px; /* Explicit height */
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.insta-swiper .swiper-button-next:after,
+.insta-swiper .swiper-button-prev:after {
+  font-size: 18px; /* Adjust icon size */
+  font-weight: bold;
+}
+
+.insta-swiper .swiper-button-next:hover,
+.insta-swiper .swiper-button-prev:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/* Position navigation buttons */
+.insta-swiper .swiper-button-prev {
+  left: 10px; /* Adjust position */
+}
+.insta-swiper .swiper-button-next {
+  right: 10px; /* Adjust position */
+}
+
+/* Style pagination */
+.insta-swiper .swiper-pagination-bullet {
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 1;
+  transition: background-color 0.2s ease;
+}
+
+.insta-swiper .swiper-pagination-bullet-active {
+  background: #333; /* Darker color for active bullet */
+}
+
+
+/* Focus outline for keyboard navigation */
+.insta-link:focus {
+  outline: 3px solid #5ca2ff; /* Clear focus indicator */
+  outline-offset: 2px;
+}
+/* Hide default focus outline on the slide itself if browser adds one */
+.insta-slide:focus {
+  outline: none;
+}
+.insta-slide:focus-visible { /* Use focus-visible for keyboard only focus */
+    outline: none;
+}
+
+
+/* Media query for smaller screens if buttons overlap content */
+@media (max-width: 640px) {
+  .insta-swiper .swiper-button-next,
+  .insta-swiper .swiper-button-prev {
+    width: 30px;
+    height: 30px;
+  }
+   .insta-swiper .swiper-button-next:after,
+   .insta-swiper .swiper-button-prev:after {
+    font-size: 14px;
+  }
+  .insta-section {
+    padding: 3rem 1rem; /* Less padding on mobile */
+  }
+}
+
+/* Style for the section title link */
+.insta-title-link {
+  color: inherit; /* Inherit color from parent h2 */
+  text-decoration: none; /* Remove underline */
+  font-weight: inherit; /* Explicitly inherit font-weight */
+  font-size: inherit; /* Explicitly inherit font-size */
+}
+
+/* Optional: Add underline back on hover/focus for visual cue */
+.insta-title-link:hover,
+.insta-title-link:focus {
+  outline: none; /* Remove default focus outline if not desired */
+}
+
+/* Style for the username part of the title */
+.insta-username {
+  font-weight: 700; /* Make username bolder than the rest of the title */
+} 

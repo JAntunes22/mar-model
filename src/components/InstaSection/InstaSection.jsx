@@ -92,12 +92,16 @@ const instagramPosts = [
 
 const InstaSection = () => {
   return (
-    <section className="insta-section">
-      <h2>Follow on Instagram</h2>
+    <section className="insta-section" id="insta-section">
+      <h2>
+        <a href="https://www.instagram.com/marcoutinh0/" target="_blank" rel="noopener noreferrer" className="insta-title-link">
+          <span className="insta-username">@marcoutinh0</span> on Instagram
+        </a>
+      </h2>
       <Swiper
         modules={[Navigation, Pagination, Mousewheel, Keyboard]}
         slidesPerView={2} // Start with 2 slides on small screens
-        spaceBetween={20}
+        spaceBetween={10}
         loop={true}
         pagination={{ clickable: true }}
         navigation={true}
@@ -110,17 +114,17 @@ const InstaSection = () => {
           // when window width is >= 640px
           640: {
             slidesPerView: 3,
-            spaceBetween: 30
+            spaceBetween: 15
           },
           // when window width is >= 768px
           768: {
             slidesPerView: 4,
-            spaceBetween: 40
+            spaceBetween: 20
           },
           // when window width is >= 1024px
           1024: {
             slidesPerView: 5, // Show 5 slides on larger screens
-            spaceBetween: 50
+            spaceBetween: 25
           }
         }}
       >
