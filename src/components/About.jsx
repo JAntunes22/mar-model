@@ -1,12 +1,9 @@
 import React from 'react';
-import { useParallax } from 'react-scroll-parallax'; // Import useParallax
+import { Parallax } from 'react-parallax'; // Import Parallax component
 import './About.css';
-import aboutImage from '../assets/about/IMG_5810.JPG'; // Import the image
+import aboutImage from '../assets/about/about.jpg'; // Import the image
 
 const About = () => {
-  // Apply parallax hook to the image container
-  const { ref: imageRef } = useParallax({ speed: -20 });
-
   return (
     <section id="about" className="about-section">
       <div className="about-content">
@@ -24,9 +21,18 @@ const About = () => {
         </p>
         {/* Add more paragraphs as needed */}
       </div>
-      {/* Apply the ref from the hook to the div containing the image */}
-      <div className="about-image" ref={imageRef}>
-        <img src={aboutImage} alt="Mar Coutinho" />
+      {/* Use Parallax component here */}
+      <div className="about-image-container"> {/* Add a container for sizing */}
+        <Parallax
+          bgImage={aboutImage}
+          strength={300} // Adjust for desired effect
+          bgImageAlt="Mar Coutinho"
+          className="about-parallax-component" // Add class for potential styling
+        >
+          {/* The height of the Parallax component is determined by its content.
+              Add an empty div with height to define the visible parallax area. */}
+          <div className="parallax-content-sizer" />
+        </Parallax>
       </div>
     </section>
   );

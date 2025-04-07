@@ -6,8 +6,10 @@ import {
 } from "react-router-dom";
 import Home from './pages/Home';
 import Navbar from './components/Navbar'; // Import Navbar
+import InstaSection from './components/InstaSection/InstaSection'; // Import InstaSection
+import ContactSection from './components/ContactSection/ContactSection'; // Import ContactSection
 // import Portfolio from './components/Portfolio'; // No longer needed here
-// import Footer from './components/Footer'; // Import Footer later
+// import Footer from './components/Footer'; // No longer needed here
 
 function App() {
   return (
@@ -19,8 +21,9 @@ function App() {
           <Route path="/" element={<Home />} />
           {/* Define other routes later if needed */}
         </Routes>
+        <InstaSection /> {/* Render InstaSection */}
       </main>
-      {/* <Footer /> */}
+      <ContactSection /> {/* Render ContactSection as footer */}
     </Router>
   );
 }

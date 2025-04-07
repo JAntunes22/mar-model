@@ -40,8 +40,8 @@ const Navbar = () => {
             <a href="#about" className="nav-link" onClick={(e) => scrollToSection(e, 'about')}>About</a>
           </li>
           <li className="nav-item">
-            {/* Assuming Insta links externally */}
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="nav-link">Insta</a>
+            {/* Scroll to Instagram section */}
+            <a href="#insta-section" className="nav-link" onClick={(e) => scrollToSection(e, 'insta-section')}>Insta</a>
           </li>
           <li className="nav-item">
             {/* Scroll to Contact section */}

@@ -3,6 +3,10 @@
 /* Remove Tailwind directives */
 
 /* Add base styles */
+html { /* Add smooth scrolling globally */
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif; /* Changed default sans font to Arial */

@@ -6,12 +6,14 @@
   background-color: #ffffff; /* White background */
   gap: 40px; /* Space between text and image */
   /* Add vertical margin based on viewport height */
-  margin: 10vh 10%;
+  margin: 0 15%;
+  /* position: relative; */ /* Removed */
+  /* z-index: 1; */ /* Removed */
 }
 
 .about-content {
   flex: 1; /* Take up remaining space */
-  max-width: 50%; /* Limit text width */
+  max-width: 40%; /* Reduced text width */
 }
 
 .about-content h2 {
@@ -20,6 +22,7 @@
   color: #333;
   font-family: 'Avenir', sans-serif;
   font-weight: 500; /* Medium weight */
+  text-transform: uppercase; /* Added */
 }
 
 .about-content p {
@@ -31,31 +34,57 @@
   margin-bottom: 15px; /* Space between paragraphs */
 }
 
-.about-image {
-  flex: 1; /* Take up remaining space */
-  max-width: 50%; /* Limit image width */
-  text-align: center; /* Center image if container is wider */
+/* New container for the Parallax component */
+.about-image-container {
+  flex: 1;
+  max-width: 60%; /* Size the container */
+  overflow: hidden; /* Mask the parallax effect */
+  /* Ensure it aligns nicely if flex settings change */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.about-image img {
-  max-width: 100%; /* Ensure image is responsive */
-  height: auto;
-  /* Optional: Add styling like border-radius or shadow */
-  /* border-radius: 8px; */
-  /* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); */
+/* Style the Parallax component itself if needed - usually height is determined by content */
+.about-parallax-component {
+  width: 100%; /* Make parallax fill its container */
 }
+
+/* This div *inside* the Parallax component gives it height */
+.parallax-content-sizer {
+  height: 100vh; /* Increased from 70vh */
+  /* Or maintain aspect ratio: */
+  /* aspect-ratio: 4 / 5; */ /* Adjust ratio based on image */
+  /* width: 100%; */ /* Needed if using aspect-ratio */
+}
+
+/* Remove or comment out old .about-image styles */
+/*
+.about-image {
+  flex: 1;
+  max-width: 60%;
+  text-align: center;
+  overflow: hidden;
+}
+*/
+/*
+.about-image img {
+  max-width: 100%;
+  height: auto;
+}
+*/
 
 /* --- Responsive Adjustments --- */
 
 @media (max-width: 768px) {
   .about-section {
     flex-direction: column; /* Stack items vertically */
-    padding: 60px 20px;
+    padding: 20px 20px;
     text-align: center; /* Center text when stacked */
   }
 
   .about-content,
-  .about-image {
+  .about-image-container { /* Update class name here */
     max-width: 100%; /* Allow full width when stacked */
   }
 
@@ -67,7 +96,11 @@
     font-size: 1rem;
   }
 
-  .about-image {
+  .about-image-container { /* Update class name here */
     margin-top: 30px; /* Add space above image when stacked */
+  }
+
+  .parallax-content-sizer {
+     height: 60vh; /* Increased from 50vh */
   }
 } 

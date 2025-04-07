@@ -1,6 +1,7 @@
 /* src/components/Portfolio.css */
 .portfolio-section {
   padding: 60px 20px;
+  padding-bottom: 100px;
   text-align: center;
   background-color: #f8f9fa; /* Light background for distinction */
   /* overflow-x: hidden; /* Flickity might handle overflow */
@@ -12,6 +13,7 @@
   color: #333;
   font-family: 'Avenir', sans-serif; /* Consistent font */
   font-weight: 500; /* Medium weight */
+  text-transform: uppercase; /* Added */
 }
 
 /* Container for the Flickity carousel */
