@@ -98,6 +98,7 @@
 
   .about-image-container { /* Update class name here */
     margin-top: 30px; /* Add space above image when stacked */
+    width: 100%; /* Ensure width is also set here */
   }
 
   .parallax-content-sizer {

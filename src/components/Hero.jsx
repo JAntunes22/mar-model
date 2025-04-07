@@ -1,19 +1,16 @@
 import React from 'react';
 import './Hero.css'; // Import the CSS file
-import heroVideo from '../assets/hero-video.mp4'; // Re-enable video import
+import heroImage from '../assets/hero-image.jpg'; // Import the hero image
 
 const Hero = () => {
   return (
     // Use class names for CSS targeting
     <section className="hero-section">
-      {/* Re-enable Video Background */}
-      <video 
-        src={heroVideo}
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="hero-video" 
+      {/* Replace Video Background with Image Background */}
+      <img 
+        src={heroImage}
+        alt="Background image of Mar Coutinho"
+        className="hero-image" // Use a new class for styling
       />
       
       {/* Re-enable Overlay */}
