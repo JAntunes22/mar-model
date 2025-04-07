@@ -13,7 +13,7 @@ import ContactSection from './components/ContactSection/ContactSection'; // Impo
 
 function App() {
   return (
-    <Router>
+    <Router basename="/mar-model">
       <Navbar /> {/* Render Navbar */}
       <main>
         {/* Use Routes to render the correct page component based on the URL */}
